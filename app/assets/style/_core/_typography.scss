@@ -1,0 +1,38 @@
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 900;
+
+
+@mixin font-size($sizeValue: 16, $lineHeight: 1.1) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 16) + rem;
+    line-height: $lineHeight;
+}
+
+a {
+  color: $color-brand ;
+}
+
+.textcenter {
+  text-align: center !important;
+}
+
+.bold {
+  font-weight: $font-weight-extrabold;
+}
+
+.xl {
+  font-size:toRem(34) !important;
+}
+.xxl {
+  font-size:toRem(55) !important;
+}
+.bigger {
+  font-size:toRem(44) !important;
+}
+.upper {
+  text-transform: uppercase;
+}

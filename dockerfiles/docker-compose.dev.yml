@@ -1,0 +1,60 @@
+version: '3'
+services:
+  nginx:
+    build:
+      context: server
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/var/www
+    ports:
+      # Nuxt port
+      - 8080:80
+      # Laravel port
+      - 8081:81
+    links:
+      - app
+      - api
+  app:
+    build:
+      context: app
+      dockerfile: Dockerfile.dev
+    image: memory-app
+    volumes: # For webpack dev server to use our local files
+      - ./../app:/var/www/app/
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./../api:/var/www/api
+    image: memory-api
+    environment:
+      APP_ENV: local
+      APP_DEBUG: 'true'
+      APP_KEY: base64:8YAmM6yoqU8At80qKszmPGvwPMjMbsMxelXEgAiHhmc=
+      APP_LOCALE: fr
+      APP_FALLBACK_LOCALE: fr
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      MEMCACHED_HOST: cache
+      CACHE_DRIVER: file
+      QUEUE_CONNECTION: sync
+    links:
+      - db:db
+    depends_on:
+      - "db"
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}

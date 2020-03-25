@@ -1,0 +1,26 @@
+* {
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    background: #111;
+    @media #{$media-tablet} {
+        font-size: 80%;
+    }
+    @media #{$media-mobile} {
+        font-size: 60%;
+    }
+}
+
+body,
+body .application {
+    font-family: 'Raleway', arial, helvetica, sans-serif;
+    @include font-size(18);
+    font-weight: $font-weight-regular;
+    color: $color-brand;
+    @media only screen and (max-width: 1600px) {
+      @include font-size(18);
+    }
+}

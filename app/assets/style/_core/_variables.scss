@@ -1,0 +1,14 @@
+@import "site-vars";
+$color-brand: #deedca;
+$color-error: #a50e0e;
+
+$media-mobileXS: '(max-width: 767px)';
+$media-mobile: '(max-width: 1023px)';
+$media-min-tablet: '(min-width: 1024px)';
+$media-tablet: '(max-width: 1439px)';
+$media-desktop: '(min-width: 1440px)';
+
+$media-150percent: '(max-height: 610px)';
+$media-min150percent: '(min-height: 610px)';
+$media-125percent: '(max-height: 760px)';
+$media-100percent1920: '(min-height: 900px)';
