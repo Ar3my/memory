@@ -13,7 +13,7 @@ $font-weight-extrabold: 900;
 }
 
 a {
-  color: $color-brand ;
+  color: $salmon ;
 }
 
 .textcenter {
@@ -35,4 +35,15 @@ a {
 }
 .upper {
   text-transform: uppercase;
+}
+
+h1 {
+  font-size: toRem(24);
+  color:white;
+  font-weight: $font-weight-extrabold;
+}
+p {
+  padding:20px;
+  font-size:toRem(18);
+  font-weight: $font-weight-semibold;
 }

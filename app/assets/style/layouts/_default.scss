@@ -1,31 +1,21 @@
 @import "default/header";
+@import "default/card";
 
-$primary: hsl(222,80%,50%);
-$primary-light: hsl(222,50%,95%);
-
-$secondary: hsl(350,80%,50%);
-
-$red: hsl(10,80%,50%);
-$orange: hsl(50,80%,50%);
-
-*, *:before, *:after {
-  box-sizing: border-box;
+#memoryDocker {
+  width:100%;
+  height:100%;
+  background: $color-darkGrey;
 }
 
-html {
-  font-size: 18px;
-  line-height: 1.5;
-  font-weight: 300;
-  color: #333;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background-color: $primary-light;
-  background-attachment: fixed;
+.container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+  height: calc(100vh - 92px);
+  padding-top:50px;
+  padding-bottom:50px;
 }
 
 .content {
@@ -34,82 +24,61 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  min-width: 60%;
 }
 
-.card {
-  color: inherit;
-  cursor: pointer;
-  width: calc(16.66% - 2rem);
-  min-width: calc(16.66% - 2rem);
-  height: 200px;
-  min-height: 200px;
-  perspective: 1000px;
-  margin: 0.5rem;
-  position: relative;
-}
-
-.front,
-.back {
+.score {
+  background:$pink;
   display: flex;
-  border-radius: 6px;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
+  margin: 0 auto;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  transition: ease-in-out 600ms;
-  // overflow: hidden;
-}
+  flex-wrap: wrap;
+  width:40%;
+  height:100%;
 
-.front {
-  background-size: cover;
-  // background-blend-mode: overlay;
-  padding: 2rem;
-  font-size: 1.618rem;
-  font-weight: 600;
-  color: #fff;
-  overflow: hidden;
-  font-family: Poppins, sans-serif;
-  &:before {
+  .timer {
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 30px rgba(black, .2);
+    background:$pink;
+  }
+
+  .display {
     position: absolute;
-    display: block;
-    content: '';
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, adjust-hue($primary, -20deg), $primary);
-    opacity: .25;
-    z-index: -1;
-  }
-  .card.on  &,
-  .card.block & {
-    transform: rotateY(180deg);
-  }
-  .card:nth-child(even).on & {
-    transform: rotateY(-180deg);
-  }
-}
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width:100%;
+    height:100%;
+    z-index: 1;
 
-.back {
-  background: #fff;
-  transform: rotateY(-180deg);
-  padding: 0 2em;
+    .time-display,
+    .score-display,
+    .fails-display{
 
-  .icon {
+      strong {
+        display:block;
+        text-align: center;
+        text-transform: uppercase;
+        font-size:toRem(24);
+        font-weight: $font-weight-extrabold;
+        color:rgba(255,255,255,0.8);
+        letter-spacing: 2px;
+      }
+      span {
+        display: block;
+        font-size:toRem(52);
+        text-align: center;
+        font-weight: $font-weight-light;
+        color:rgba(255,255,255,0.8);
+        padding:10px;
+      }
+    }
 
-  }
-
-  .card.on &,
-  .card.block &{
-    transform: rotateY(0deg);
   }
 
 }

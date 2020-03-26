@@ -5,7 +5,7 @@
 
 html {
     font-size: 18px;
-    background: #111;
+    background: $color-darkGrey;
     @media #{$media-tablet} {
         font-size: 80%;
     }
@@ -19,8 +19,105 @@ body .application {
     font-family: 'Raleway', arial, helvetica, sans-serif;
     @include font-size(18);
     font-weight: $font-weight-regular;
-    color: $color-brand;
     @media only screen and (max-width: 1600px) {
       @include font-size(18);
     }
+    background: $color-darkGrey;
+    color: white;
+}
+
+.btn {
+  border: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background:$salmon;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.form {
+  width:50%;
+  margin:0 auto 30px;
+}
+
+.field {
+	display: flex;
+	flex-flow: column-reverse;
+}
+
+label,
+input {
+	transition: all .2s ease;
+}
+
+input {
+	font-size: 24px;
+	border: 0;
+	border-bottom: 1px solid $pink;
+	-webkit-appearance: none;
+	border-radius: 0;
+	padding: 5px 0;
+	&:focus {
+		outline: 0;
+		border-color: $salmon;
+	}
+	&:placeholder-shown + label {
+		cursor: text;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transform-origin: center bottom;
+		transform: translate(0,40px) scale(1.5);
+	}
+	&:not(:placeholder-shown) + label,
+	&:focus + label {
+		transform: translate(0, 0) scale(1);
+		cursor: default;
+		color: $salmon;
+	}
+}
+
+label {
+  position: relative;
+  z-index:-1;
+	color: $pink;
+  text-align:center;
+}
+
+::-webkit-input-placeholder {
+	opacity: 0;
+	transition: inherit;
 }

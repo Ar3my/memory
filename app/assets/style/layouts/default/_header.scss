@@ -1,0 +1,25 @@
+.header {
+  height:80px;
+  padding:20px;
+  background:$salmon;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid $pink;
+
+  .btn-icon {
+    cursor: pointer;
+    display: flex;
+    height:30px;
+    width:30px;
+    align-items: center;
+    justify-content: center;
+    font-size: toRem(18);
+    background:$salmon;
+    color:$color-darkGrey;
+    .icon {
+      margin-top: 4px;
+    }
+  }
+
+}

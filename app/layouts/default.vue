@@ -1,14 +1,15 @@
 <template>
-  <div id="MemoryDocker">
-    <!-- <vHeader /> -->
+  <div id="memoryDocker">
+    <m-header />
     <nuxt />
   </div>
 </template>
 <script>
-// import vHeader from '../components/layouts/header';
+import mHeader from '../components/layouts/header';
 
 export default {
   components: {
+    mHeader,
   },
   beforeCreate() {
   },

@@ -1,38 +1,32 @@
 <template>
   <div class="header">
-
+    <h1>NUXT MEMORY</h1>
+    <span
+      class="btn-icon"
+      @click="makeFullScreen"
+    >
+      <span v-if="!fullscreen"><enlarge class="icon" /></span>
+      <span v-else><shrink class="icon" /></span>
+    </span>
   </div>
 </template>
 
 <script>
+import enlarge from '../../assets/svg/enlarge.svg?inline';
+import shrink from '../../assets/svg/shrink.svg?inline';
+
 export default {
   components: {
+    enlarge,
+    shrink,
   },
-  data: function () {
-    return {
-    };
-  },
+  data: () => ({
+    fullscreen: false,
+  }
+  ),
   methods: {
-    toggleFullScreen() {
-      if (document.requestFullscreen) {
-        if (this.fullscreen) {
-          document.exitFullscreen();
-        } else {
-          document.body.requestFullscreen();
-        }
-        this.fullscreen = !this.fullscreen;
-      } else if (document.msRequestFullscreen) {
-        if (document.msFullscreenElement) {
-          document.msExitFullscreen();
-        } else {
-          document.msRequestFullscreen();
-        }
-        this.fullscreen = !this.fullscreen;
-      }
-      return false;
-    },
     makeFullScreen() {
-      const divObj = document.getElementById('vinciApp'); //  get the target element
+      const divObj = document.getElementById('memoryDocker'); //  get the target element
 
       if (divObj.requestFullscreen) {
         if (this.fullscreen) {

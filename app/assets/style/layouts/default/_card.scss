@@ -1,0 +1,75 @@
+.card {
+  color: inherit;
+  cursor: pointer;
+  width: calc(16.66% - 2rem);
+  min-width: calc(16.66% - 2rem);
+  height: 200px;
+  min-height: 200px;
+  perspective: 1000px;
+  margin: 0.5rem;
+  position: relative;
+}
+
+.front,
+.back {
+  display: flex;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+  // overflow: hidden;
+  max-width: 100%;
+}
+
+.front {
+  background-size: cover;
+  // background-blend-mode: overlay;
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, adjust-hue($salmon, -20deg), $salmon);
+    opacity: 1;
+    z-index: -1;
+  }
+  .card.on  &,
+  .card.block & {
+    transform: rotateY(180deg);
+  }
+  .card:nth-child(even).on & {
+    transform: rotateY(-180deg);
+  }
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(-180deg);
+  padding: 0 ;
+  color:$light-blue;
+  font-size: toRem(50);
+
+  .card.on &,
+  .card.block &{
+    transform: rotateY(0deg);
+  }
+
+}
