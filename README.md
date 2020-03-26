@@ -22,4 +22,4 @@ $ yarn dev:killall
 
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+For detailed explanation on how things work, check out [Docker docs](https://docker.com/) / [Nuxt.js docs](https://nuxtjs.org) / [Lumen docs](https://lumen.laravel.com/).

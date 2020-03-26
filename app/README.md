@@ -17,4 +17,4 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Docker docs](https://docker.com/) / [Nuxt.js docs](https://nuxtjs.org) / [Lumen docs](https://lumen.laravel.com/).
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
