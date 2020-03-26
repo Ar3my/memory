@@ -1,7 +1,5 @@
 require('dotenv').config(); // eslint-disable-line
 
-import hooks from './hooks'
-
 const build = {
   extractCSS: true,
   // publicPath: '.vinci/',
