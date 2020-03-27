@@ -1,5 +1,3 @@
-require('dotenv').config(); // eslint-disable-line
-
 const build = {
   extractCSS: true,
   // publicPath: '.vinci/',
@@ -23,12 +21,7 @@ const build = {
 
 export default {
   mode: 'spa',
-  env: {
-    baseUrl: process.env.IS_ROOT === 'production' ? './' : '/',
-    asyncUri: process.env.IS_ROOT === 'production' ? './' : '/',
-  },
   router: {
-    base: process.env.IS_ROOT === 'production' ? './' : '/',
     mode: 'hash',
   },
   // hooks: hooks(this),
@@ -63,21 +56,20 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-    '@nuxtjs/dotenv',
-  ],
+  buildModules: [],
   /*
   ** Nuxt.js modules
   */
   modules: [
     'nuxt-svg',
     'nuxt-webfontloader',
+    '@nuxtjs/axios',
   ],
   axios: {
-    https: '' || false,
-    host: '' || '',
-    port: '' || 80,
-    baseURL: process.env.IS_ROOT === 'production' ? './' : '/',
+    https:false,
+    host: '',
+    port: 8081,
+    baseURL:'/api',
     debug: 'false',
   },
   generate: {
