@@ -2,6 +2,6 @@ CREATE DATABASE IF NOT EXISTS lumen;
 
 USE lumen;
 
-CREATE TABLE mytable (myfield VARCHAR(20));
+CREATE TABLE exempleTable (exemplefield VARCHAR(20));
 
-INSERT INTO mytable VALUES ('Hello'), ('Dolly');
+INSERT INTO exempleTable VALUES ('field1'), ('field2');

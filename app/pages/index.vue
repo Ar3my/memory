@@ -238,6 +238,7 @@ export default {
     started: false,
     timer: null,
     time: 0,
+    timeElapsed: 0,
     display: null,
     wavePosition: 0,
   }),
@@ -253,6 +254,7 @@ export default {
       this.started = false;
       this.timer = null;
       this.time = 0;
+      this.timeElapsed = 0;
       this.display = null;
       this.wavePosition = 0;
 
@@ -300,17 +302,17 @@ export default {
       }
     },
     startGame() {
-      console.log('kiki');
       const that = this;
       this.timer = moment.duration(1, 'minutes').timer(() => {
         that.finishGame();
       });
       this.display = setInterval(() => {
         const remain = that.timer.getRemainingDuration();
-        const totaltimer = 60; // 2 minutes in second !
+        const totaltimer = 60; // 1 minutes in second !
         const remainInSeconds = moment(remain).format('X');
         that.time = moment(remain).format('mm:ss');
         that.wavePosition = -(100 - ((remainInSeconds / totaltimer) * 100).toFixed(1));
+        that.timeElapsed = moment.utc(moment('01:00', 'mm:ss').diff(moment(that.time, 'mm:ss'))).format('mm [Minutes et] ss [Secondes]');
       }, 500);
     },
     finishGame: function finishGame() {

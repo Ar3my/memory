@@ -15,6 +15,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('users', [
-    'uses' => 'UserController@showProfiles'
-]);
+$router->get('/scores', 'ScoreController@index');
+$router->post('/score', 'ScoreController@create');
+$router->get('/score/{id}', 'ScoreController@show');
+
+$router->group(['prefix'=>'api/v1'], function() use($router){
+
+  // $app->put('/score/{id}', 'ScoreController@update'); // Comment edit endpoint because no edit avaible on memory-game
+  // $app->delete('/score/{id}', 'ScoreController@destroy'); // Comment delete endpoint because no delete avaible on memory-game
+});
