@@ -35,6 +35,9 @@ $ yarn dev:apiInstall
 ## 4 migrate database
 $ yarn dev:apiMigrate
 ```
+## Play memory !
+View api scores on [localhost:8081/api/scores](https://localhost:8081/api/scores)
+View app to play memory on [localhost:8080](https://localhost:8080)
 
 ## Use yarn command to down or flush containers
 
