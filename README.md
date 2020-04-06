@@ -4,22 +4,6 @@
 
 This project require DOCKER !
 
-``` bash
-
-# install project
-$ yarn dev:build
-
-# serve project after install
-$ yarn dev:up
-
-# down all container
-$ yarn dev:down
-
-# down containers and killall
-$ yarn dev:killall
-
-```
-
 ## Getting start
 
 This project require DOCKER / Yarn / composer php
@@ -52,7 +36,7 @@ $ yarn dev:apiInstall
 $ yarn dev:apiMigrate
 ```
 
-##Use yarn command to down or flush containers 
+##Use yarn command to down or flush containers
 
 ``` bash
 # down all container
@@ -60,6 +44,30 @@ $ yarn dev:down
 
 # down containers and killall
 $ yarn dev:killall
+
+```
+
+## All yarn commands
+
+``` bash
+
+# install project
+$ yarn dev:build
+
+# serve project after install
+$ yarn dev:up
+
+# down all container
+$ yarn dev:down
+
+# down containers and killall
+$ yarn dev:killall
+
+## 3 install php vendors with composer
+$ yarn dev:apiInstall
+
+## 4 migrate database
+$ yarn dev:apiMigrate
 
 ```
 
