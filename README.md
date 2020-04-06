@@ -36,7 +36,7 @@ $ yarn dev:apiInstall
 $ yarn dev:apiMigrate
 ```
 
-##Use yarn command to down or flush containers
+## Use yarn command to down or flush containers
 
 ``` bash
 # down all container
