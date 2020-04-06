@@ -9,6 +9,6 @@
     "dev:down": "docker-compose -f dockerfiles/docker-compose.dev.yml down",
     "dev:killall": "docker-compose -f dockerfiles/docker-compose.dev.yml down --volumes",
     "dev:apiInstall": "docker exec -i -t dockerfiles_api_1 composer install",
-    "dev:apiMigrate": "docker exec -i -t dockerfiles_api_1 php artisan --seed"
+    "dev:apiMigrate": "docker exec -i -t dockerfiles_api_1 php artisan migrate --seed"
   }
 }

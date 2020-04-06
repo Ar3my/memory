@@ -37,15 +37,24 @@ $ yarn install
 # quit api folder
 $ cd ..
 
+## 2 UP docker containers
+$ yarn dev:up
+
+```
+
+>/!\ use "docker ps -a" to check if all containers are up.
+
+``` bash
 ## 3 install php vendors with composer
-# go into api folder
-$ cd api/
-# install node modules
-$ composer install
-# quit api folder
-$ cd ..
+$ yarn dev:apiInstall
 
+## 4 migrate database
+$ yarn dev:apiMigrate
+```
 
+##Use yarn command to down or flush containers 
+
+``` bash
 # down all container
 $ yarn dev:down
 
