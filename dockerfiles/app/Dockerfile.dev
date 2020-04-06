@@ -8,5 +8,4 @@ WORKDIR /var/www/app
 ENV HOST 0.0.0.0
 
 # Init command
-CMD ["sh", "-c", "npm rebuild node-sass"]
-CMD ["sh", "-c", "yarn dev"]
+CMD ["sh", "-c", "npm rebuild node-sass && yarn dev"]

@@ -7,6 +7,8 @@
     "dev:build": "docker-compose -f dockerfiles/docker-compose.dev.yml build",
     "dev:up": "docker-compose -f dockerfiles/docker-compose.dev.yml up -d",
     "dev:down": "docker-compose -f dockerfiles/docker-compose.dev.yml down",
-    "dev:killall": "docker-compose -f dockerfiles/docker-compose.dev.yml down --volumes"
+    "dev:killall": "docker-compose -f dockerfiles/docker-compose.dev.yml down --volumes",
+    "dev:apiInstall": "docker exec -i -t dockerfiles_api_1 composer install",
+    "dev:apiMigrate": "docker exec -i -t dockerfiles_api_1 php artisan --seed"
   }
 }
